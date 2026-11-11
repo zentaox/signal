@@ -225,7 +225,7 @@
      "score": 3
     },
     {
-     "text": "龙虎榜 2026-11-10：3家机构买入，成功率30.36%",
+     "text": "龙虎榜 2026-11-11：3家机构买入，成功率24.46%",
      "score": 1
     }
    ],
@@ -320,6 +320,41 @@
   },
   {
    "rank": 10,
+   "code": "001339",
+   "name": "智微智能",
+   "price": 69.73,
+   "chg": 10.0,
+   "score": 7,
+   "first_date": "2026-11-11",
+   "is_new": false,
+   "reasons": [
+    {
+     "text": "现价比 小摩 的估算成本低 15.0%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "score": 2
+    },
+    {
+     "text": "定增在途，近 30 天审核无推进",
+     "score": 1
+    },
+    {
+     "text": "近 5 个交易日涨停，最高 2 连板",
+     "score": 3
+    },
+    {
+     "text": "龙虎榜 2026-11-11：3家机构买入，成功率15.80%",
+     "score": 1
+    }
+   ],
+   "tide": {
+    "vol_ratio": 2.46,
+    "from_high": -36.4,
+    "limit_ups": 2
+   },
+   "report": null,
+   "verdict": null
+  },
+  {
+   "rank": 11,
    "code": "002669",
    "name": "康达新材",
    "price": 11.48,
@@ -350,14 +385,14 @@
    "verdict": null
   },
   {
-   "rank": 11,
+   "rank": 12,
    "code": "000407",
    "name": "胜利股份",
    "price": 4.35,
    "chg": 10.13,
    "score": 7,
    "first_date": "2026-11-11",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 3 家外资新进：大摩、瑞银、高盛",
@@ -381,7 +416,7 @@
    "verdict": null
   },
   {
-   "rank": 12,
+   "rank": 13,
    "code": "002172",
    "name": "澳洋健康",
    "price": 6.05,
@@ -412,7 +447,7 @@
    "verdict": null
   },
   {
-   "rank": 13,
+   "rank": 14,
    "code": "003036",
    "name": "泰坦股份",
    "price": 32.07,
@@ -439,7 +474,7 @@
    "verdict": null
   },
   {
-   "rank": 14,
+   "rank": 15,
    "code": "300534",
    "name": "陇神戎发",
    "price": 10.87,
@@ -466,7 +501,7 @@
    "verdict": null
   },
   {
-   "rank": 15,
+   "rank": 16,
    "code": "600359",
    "name": "新农开发",
    "price": 6.15,
@@ -493,7 +528,7 @@
    "verdict": null
   },
   {
-   "rank": 16,
+   "rank": 17,
    "code": "300311",
    "name": "任子行",
    "price": 4.94,
@@ -520,7 +555,7 @@
    "verdict": null
   },
   {
-   "rank": 17,
+   "rank": 18,
    "code": "002848",
    "name": "高斯贝尔",
    "price": 13.55,
@@ -547,7 +582,7 @@
    "verdict": null
   },
   {
-   "rank": 18,
+   "rank": 19,
    "code": "600641",
    "name": "先导基电",
    "price": 35.92,
@@ -574,7 +609,7 @@
    "verdict": null
   },
   {
-   "rank": 19,
+   "rank": 20,
    "code": "002614",
    "name": "奥佳华",
    "price": 7.18,
@@ -601,7 +636,7 @@
    "verdict": null
   },
   {
-   "rank": 20,
+   "rank": 21,
    "code": "603137",
    "name": "恒尚节能",
    "price": 16.43,
@@ -632,7 +667,7 @@
    "verdict": null
   },
   {
-   "rank": 21,
+   "rank": 22,
    "code": "300283",
    "name": "温州宏丰",
    "price": 10.13,
@@ -663,7 +698,7 @@
    "verdict": null
   },
   {
-   "rank": 22,
+   "rank": 23,
    "code": "300706",
    "name": "阿石创",
    "price": 39.71,
@@ -694,7 +729,7 @@
    "verdict": null
   },
   {
-   "rank": 23,
+   "rank": 24,
    "code": "301005",
    "name": "超捷股份",
    "price": 59.56,
@@ -725,7 +760,7 @@
    "verdict": null
   },
   {
-   "rank": 24,
+   "rank": 25,
    "code": "605588",
    "name": "冠石科技",
    "price": 37.43,
@@ -756,7 +791,7 @@
    "verdict": null
   },
   {
-   "rank": 25,
+   "rank": 26,
    "code": "001216",
    "name": "华瓷股份",
    "price": 17.87,
@@ -787,37 +822,6 @@
    "verdict": null
   },
   {
-   "rank": 26,
-   "code": "001339",
-   "name": "智微智能",
-   "price": 69.73,
-   "chg": 10.0,
-   "score": 6,
-   "first_date": "2026-11-11",
-   "is_new": true,
-   "reasons": [
-    {
-     "text": "现价比 小摩 的估算成本低 15.0%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
-     "score": 2
-    },
-    {
-     "text": "定增在途，近 30 天审核无推进",
-     "score": 1
-    },
-    {
-     "text": "近 5 个交易日涨停，最高 2 连板",
-     "score": 3
-    }
-   ],
-   "tide": {
-    "vol_ratio": 2.46,
-    "from_high": -36.4,
-    "limit_ups": 2
-   },
-   "report": null,
-   "verdict": null
-  },
-  {
    "rank": 27,
    "code": "002639",
    "name": "雪人集团",
@@ -825,7 +829,7 @@
    "chg": -3.17,
    "score": 6,
    "first_date": "2026-11-11",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 2 家外资新进：大摩、高盛",
@@ -856,7 +860,7 @@
    "chg": -5.79,
    "score": 6,
    "first_date": "2026-11-11",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 4 家外资新进：大摩、小摩、瑞银、高盛",
