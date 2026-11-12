@@ -245,7 +245,7 @@
    "chg": -2.39,
    "score": 8,
    "first_date": "2026-11-12",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 3 家外资新进：小摩、巴克莱、瑞银",
@@ -287,7 +287,7 @@
      "score": 3
     },
     {
-     "text": "龙虎榜 2026-11-11：3家机构买入，成功率24.46%",
+     "text": "龙虎榜 2026-11-11：2家机构买入，成功率20.40%",
      "score": 1
     }
    ],
@@ -454,7 +454,7 @@
    "chg": -7.0,
    "score": 7,
    "first_date": "2026-11-12",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 2 家外资新进：大摩、巴克莱",
@@ -485,7 +485,7 @@
    "chg": -3.29,
    "score": 7,
    "first_date": "2026-11-12",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 2 家外资新进：大摩、巴克莱",
@@ -541,6 +541,37 @@
   },
   {
    "rank": 17,
+   "code": "002021",
+   "name": "中捷资源",
+   "price": 2.63,
+   "chg": 10.04,
+   "score": 7,
+   "first_date": "2026-11-12",
+   "is_new": true,
+   "reasons": [
+    {
+     "text": "2026-09-30 同季 3 家外资新进：小摩、巴克莱、高盛",
+     "score": 4
+    },
+    {
+     "text": "近 5 个交易日涨停，首板",
+     "score": 2
+    },
+    {
+     "text": "龙虎榜 2026-11-12：4家机构买入，成功率26.58%",
+     "score": 1
+    }
+   ],
+   "tide": {
+    "vol_ratio": 3.09,
+    "from_high": -32.4,
+    "limit_ups": 2
+   },
+   "report": null,
+   "verdict": null
+  },
+  {
+   "rank": 18,
    "code": "000407",
    "name": "胜利股份",
    "price": 4.43,
@@ -571,7 +602,7 @@
    "verdict": null
   },
   {
-   "rank": 18,
+   "rank": 19,
    "code": "002172",
    "name": "澳洋健康",
    "price": 6.66,
@@ -602,7 +633,7 @@
    "verdict": null
   },
   {
-   "rank": 19,
+   "rank": 20,
    "code": "003036",
    "name": "泰坦股份",
    "price": 31.24,
@@ -629,7 +660,7 @@
    "verdict": null
   },
   {
-   "rank": 20,
+   "rank": 21,
    "code": "300534",
    "name": "陇神戎发",
    "price": 11.3,
@@ -656,7 +687,7 @@
    "verdict": null
   },
   {
-   "rank": 21,
+   "rank": 22,
    "code": "300311",
    "name": "任子行",
    "price": 4.79,
@@ -683,7 +714,7 @@
    "verdict": null
   },
   {
-   "rank": 22,
+   "rank": 23,
    "code": "600359",
    "name": "新农开发",
    "price": 6.08,
@@ -710,7 +741,7 @@
    "verdict": null
   },
   {
-   "rank": 23,
+   "rank": 24,
    "code": "002848",
    "name": "高斯贝尔",
    "price": 13.41,
@@ -737,7 +768,7 @@
    "verdict": null
   },
   {
-   "rank": 24,
+   "rank": 25,
    "code": "002614",
    "name": "奥佳华",
    "price": 6.97,
@@ -764,14 +795,14 @@
    "verdict": null
   },
   {
-   "rank": 25,
+   "rank": 26,
    "code": "600467",
    "name": "好当家",
    "price": 2.48,
    "chg": 10.22,
    "score": 7,
    "first_date": "2026-11-12",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 4 家外资新进：大摩、小摩、巴克莱、高盛",
@@ -791,7 +822,7 @@
    "verdict": null
   },
   {
-   "rank": 26,
+   "rank": 27,
    "code": "603137",
    "name": "恒尚节能",
    "price": 16.28,
@@ -822,7 +853,7 @@
    "verdict": null
   },
   {
-   "rank": 27,
+   "rank": 28,
    "code": "300283",
    "name": "温州宏丰",
    "price": 9.86,
@@ -853,7 +884,7 @@
    "verdict": null
   },
   {
-   "rank": 28,
+   "rank": 29,
    "code": "300706",
    "name": "阿石创",
    "price": 38.86,
@@ -884,7 +915,7 @@
    "verdict": null
   },
   {
-   "rank": 29,
+   "rank": 30,
    "code": "301005",
    "name": "超捷股份",
    "price": 57.27,
@@ -909,37 +940,6 @@
    "tide": {
     "vol_ratio": 0.87,
     "from_high": -64.9,
-    "limit_ups": 0
-   },
-   "report": null,
-   "verdict": null
-  },
-  {
-   "rank": 30,
-   "code": "605588",
-   "name": "冠石科技",
-   "price": 37.25,
-   "chg": -0.48,
-   "score": 6,
-   "first_date": "2026-11-09",
-   "is_new": false,
-   "reasons": [
-    {
-     "text": "2026-09-30 同季 2 家外资新进：小摩、美林",
-     "score": 3
-    },
-    {
-     "text": "现价比 大摩 的估算成本低 24.3%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
-     "score": 2
-    },
-    {
-     "text": "定增在途，近 30 天审核无推进",
-     "score": 1
-    }
-   ],
-   "tide": {
-    "vol_ratio": 0.91,
-    "from_high": -48.3,
     "limit_ups": 0
    },
    "report": null,
