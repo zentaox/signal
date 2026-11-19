@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18",
+ "updated": "2026-11-19",
  "rules": [
   {
    "fact": "最新一期名册里同季 2 家及以上外资通道新进（每多一家 +1）",
@@ -51,8 +51,8 @@
    "rank": 1,
    "code": "300404",
    "name": "博济医药",
-   "price": 9.97,
-   "chg": -4.23,
+   "price": 9.48,
+   "chg": -4.91,
    "score": 10,
    "first_date": "2026-10-31",
    "is_new": false,
@@ -62,7 +62,7 @@
      "score": 5
     },
     {
-     "text": "现价比 大摩 的估算成本低 23.8%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 大摩 的估算成本低 27.5%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     },
     {
@@ -71,8 +71,8 @@
     }
    ],
    "tide": {
-    "vol_ratio": 0.67,
-    "from_high": -44.6,
+    "vol_ratio": 0.51,
+    "from_high": -47.3,
     "limit_ups": 0
    },
    "report": null,
@@ -82,8 +82,8 @@
    "rank": 2,
    "code": "002848",
    "name": "高斯贝尔",
-   "price": 12.05,
-   "chg": -2.43,
+   "price": 11.97,
+   "chg": -0.66,
    "score": 9,
    "first_date": "2026-10-31",
    "is_new": false,
@@ -93,7 +93,7 @@
      "score": 4
     },
     {
-     "text": "现价比 大摩 的估算成本低 15.0%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 大摩 的估算成本低 15.5%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     },
     {
@@ -102,8 +102,8 @@
     }
    ],
    "tide": {
-    "vol_ratio": 0.62,
-    "from_high": -32.8,
+    "vol_ratio": 0.76,
+    "from_high": -33.2,
     "limit_ups": 0
    },
    "report": null,
@@ -113,8 +113,8 @@
    "rank": 3,
    "code": "603618",
    "name": "杭电股份",
-   "price": 21.15,
-   "chg": 2.47,
+   "price": 20.9,
+   "chg": -1.18,
    "score": 8,
    "first_date": "2026-11-06",
    "is_new": false,
@@ -124,7 +124,7 @@
      "score": 3
     },
     {
-     "text": "现价比 小摩 的估算成本低 37.1%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 小摩 的估算成本低 37.9%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     },
     {
@@ -133,8 +133,8 @@
     }
    ],
    "tide": {
-    "vol_ratio": 0.62,
-    "from_high": -63.0,
+    "vol_ratio": 0.46,
+    "from_high": -63.5,
     "limit_ups": 0
    },
    "report": null,
@@ -144,8 +144,8 @@
    "rank": 4,
    "code": "600783",
    "name": "鲁信创投",
-   "price": 11.9,
-   "chg": -1.49,
+   "price": 11.66,
+   "chg": -2.02,
    "score": 8,
    "first_date": "2026-10-31",
    "is_new": false,
@@ -155,7 +155,7 @@
      "score": 3
     },
     {
-     "text": "现价比 大摩 的估算成本低 32.5%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 大摩 的估算成本低 33.9%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     },
     {
@@ -164,8 +164,8 @@
     }
    ],
    "tide": {
-    "vol_ratio": 0.76,
-    "from_high": -69.8,
+    "vol_ratio": 0.69,
+    "from_high": -70.4,
     "limit_ups": 0
    },
    "report": null,
@@ -173,72 +173,10 @@
   },
   {
    "rank": 5,
-   "code": "300721",
-   "name": "怡达股份",
-   "price": 16.74,
-   "chg": -4.78,
-   "score": 8,
-   "first_date": "2026-10-31",
-   "is_new": false,
-   "reasons": [
-    {
-     "text": "2026-09-30 同季 4 家外资新进：大摩、小摩、巴克莱、瑞银",
-     "score": 5
-    },
-    {
-     "text": "现价比 小摩 的估算成本低 32.4%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
-     "score": 2
-    },
-    {
-     "text": "定增在途，近 30 天审核无推进",
-     "score": 1
-    }
-   ],
-   "tide": {
-    "vol_ratio": 4.08,
-    "from_high": -60.1,
-    "limit_ups": 0
-   },
-   "report": null,
-   "verdict": null
-  },
-  {
-   "rank": 6,
-   "code": "603324",
-   "name": "盛剑科技",
-   "price": 22.9,
-   "chg": 9.99,
-   "score": 8,
-   "first_date": "2026-11-17",
-   "is_new": false,
-   "reasons": [
-    {
-     "text": "2026-09-30 同季 2 家外资新进：小摩、美林",
-     "score": 3
-    },
-    {
-     "text": "现价比 瑞银 的估算成本低 29.0%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
-     "score": 2
-    },
-    {
-     "text": "近 5 个交易日涨停，最高 2 连板",
-     "score": 3
-    }
-   ],
-   "tide": {
-    "vol_ratio": 0.77,
-    "from_high": -59.4,
-    "limit_ups": 2
-   },
-   "report": null,
-   "verdict": null
-  },
-  {
-   "rank": 7,
    "code": "300243",
    "name": "瑞丰高材",
-   "price": 12.8,
-   "chg": 0.08,
+   "price": 12.35,
+   "chg": -3.52,
    "score": 8,
    "first_date": "2026-10-31",
    "is_new": false,
@@ -248,7 +186,7 @@
      "score": 5
     },
     {
-     "text": "现价比 小摩 的估算成本低 28.1%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 小摩 的估算成本低 30.7%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     },
     {
@@ -257,19 +195,50 @@
     }
    ],
    "tide": {
-    "vol_ratio": 0.55,
-    "from_high": -48.7,
+    "vol_ratio": 0.45,
+    "from_high": -50.5,
     "limit_ups": 0
    },
    "report": null,
    "verdict": null
   },
   {
-   "rank": 8,
+   "rank": 6,
+   "code": "300721",
+   "name": "怡达股份",
+   "price": 17.51,
+   "chg": 4.6,
+   "score": 8,
+   "first_date": "2026-10-31",
+   "is_new": false,
+   "reasons": [
+    {
+     "text": "2026-09-30 同季 4 家外资新进：大摩、小摩、巴克莱、瑞银",
+     "score": 5
+    },
+    {
+     "text": "现价比 小摩 的估算成本低 29.3%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "score": 2
+    },
+    {
+     "text": "定增在途，近 30 天审核无推进",
+     "score": 1
+    }
+   ],
+   "tide": {
+    "vol_ratio": 4.13,
+    "from_high": -58.3,
+    "limit_ups": 0
+   },
+   "report": null,
+   "verdict": null
+  },
+  {
+   "rank": 7,
    "code": "301082",
    "name": "久盛电气",
-   "price": 8.26,
-   "chg": -0.6,
+   "price": 7.88,
+   "chg": -4.6,
    "score": 8,
    "first_date": "2026-11-03",
    "is_new": false,
@@ -279,7 +248,7 @@
      "score": 3
     },
     {
-     "text": "现价比 高盛 的估算成本低 18.9%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 高盛 的估算成本低 22.6%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     },
     {
@@ -288,46 +257,50 @@
     }
    ],
    "tide": {
-    "vol_ratio": 0.82,
-    "from_high": -52.1,
+    "vol_ratio": 0.89,
+    "from_high": -54.3,
     "limit_ups": 0
+   },
+   "report": null,
+   "verdict": null
+  },
+  {
+   "rank": 8,
+   "code": "603324",
+   "name": "盛剑科技",
+   "price": 25.19,
+   "chg": 10.0,
+   "score": 8,
+   "first_date": "2026-11-17",
+   "is_new": false,
+   "reasons": [
+    {
+     "text": "2026-09-30 同季 2 家外资新进：小摩、美林",
+     "score": 3
+    },
+    {
+     "text": "现价比 瑞银 的估算成本低 21.9%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "score": 2
+    },
+    {
+     "text": "近 5 个交易日涨停，最高 3 连板",
+     "score": 3
+    }
+   ],
+   "tide": {
+    "vol_ratio": 4.03,
+    "from_high": -55.3,
+    "limit_ups": 3
    },
    "report": null,
    "verdict": null
   },
   {
    "rank": 9,
-   "code": "000505",
-   "name": "京粮控股",
-   "price": 5.34,
-   "chg": -1.29,
-   "score": 8,
-   "first_date": "2026-10-31",
-   "is_new": false,
-   "reasons": [
-    {
-     "text": "2026-09-30 同季 5 家外资新进：大摩、小摩、巴克莱、瑞银、美林",
-     "score": 6
-    },
-    {
-     "text": "现价比 小摩 的估算成本低 22.3%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
-     "score": 2
-    }
-   ],
-   "tide": {
-    "vol_ratio": 0.66,
-    "from_high": -43.8,
-    "limit_ups": 0
-   },
-   "report": null,
-   "verdict": null
-  },
-  {
-   "rank": 10,
    "code": "600371",
    "name": "万向德农",
-   "price": 10.29,
-   "chg": -3.2,
+   "price": 9.72,
+   "chg": -5.54,
    "score": 8,
    "first_date": "2026-10-31",
    "is_new": false,
@@ -337,13 +310,40 @@
      "score": 6
     },
     {
-     "text": "现价比 大摩 的估算成本低 22.0%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 大摩 的估算成本低 26.3%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     }
    ],
    "tide": {
-    "vol_ratio": 0.64,
-    "from_high": -44.4,
+    "vol_ratio": 0.46,
+    "from_high": -47.5,
+    "limit_ups": 0
+   },
+   "report": null,
+   "verdict": null
+  },
+  {
+   "rank": 10,
+   "code": "000505",
+   "name": "京粮控股",
+   "price": 5.19,
+   "chg": -2.81,
+   "score": 8,
+   "first_date": "2026-10-31",
+   "is_new": false,
+   "reasons": [
+    {
+     "text": "2026-09-30 同季 5 家外资新进：大摩、小摩、巴克莱、瑞银、美林",
+     "score": 6
+    },
+    {
+     "text": "现价比 小摩 的估算成本低 24.5%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "score": 2
+    }
+   ],
+   "tide": {
+    "vol_ratio": 0.67,
+    "from_high": -45.4,
     "limit_ups": 0
    },
    "report": null,
@@ -353,8 +353,8 @@
    "rank": 11,
    "code": "300368",
    "name": "汇金股份",
-   "price": 7.74,
-   "chg": -3.13,
+   "price": 7.35,
+   "chg": -5.04,
    "score": 8,
    "first_date": "2026-10-31",
    "is_new": false,
@@ -364,13 +364,13 @@
      "score": 6
     },
     {
-     "text": "现价比 美林 的估算成本低 15.3%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 美林 的估算成本低 19.6%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     }
    ],
    "tide": {
-    "vol_ratio": 0.46,
-    "from_high": -56.4,
+    "vol_ratio": 0.47,
+    "from_high": -57.2,
     "limit_ups": 0
    },
    "report": null,
@@ -380,8 +380,8 @@
    "rank": 12,
    "code": "600467",
    "name": "好当家",
-   "price": 2.77,
-   "chg": 0.73,
+   "price": 2.6,
+   "chg": -6.14,
    "score": 8,
    "first_date": "2026-11-12",
    "is_new": false,
@@ -396,9 +396,9 @@
     }
    ],
    "tide": {
-    "vol_ratio": 4.77,
-    "from_high": -16.2,
-    "limit_ups": 3
+    "vol_ratio": 2.68,
+    "from_high": -21.3,
+    "limit_ups": 2
    },
    "report": null,
    "verdict": null
@@ -407,8 +407,8 @@
    "rank": 13,
    "code": "688655",
    "name": "迅捷兴",
-   "price": 34.42,
-   "chg": 3.86,
+   "price": 33.14,
+   "chg": -3.72,
    "score": 7,
    "first_date": "2026-11-03",
    "is_new": false,
@@ -418,38 +418,7 @@
      "score": 4
     },
     {
-     "text": "现价比 小摩 的估算成本低 28.4%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
-     "score": 2
-    },
-    {
-     "text": "定增在途，近 30 天审核无推进",
-     "score": 1
-    }
-   ],
-   "tide": {
-    "vol_ratio": 0.91,
-    "from_high": -57.4,
-    "limit_ups": 0
-   },
-   "report": null,
-   "verdict": null
-  },
-  {
-   "rank": 14,
-   "code": "002669",
-   "name": "康达新材",
-   "price": 10.57,
-   "chg": -0.56,
-   "score": 7,
-   "first_date": "2026-10-31",
-   "is_new": false,
-   "reasons": [
-    {
-     "text": "2026-09-30 同季 3 家外资新进：大摩、瑞银、高盛",
-     "score": 4
-    },
-    {
-     "text": "现价比 大摩 的估算成本低 22.7%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 小摩 的估算成本低 31.1%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     },
     {
@@ -459,7 +428,38 @@
    ],
    "tide": {
     "vol_ratio": 0.66,
-    "from_high": -44.7,
+    "from_high": -59.0,
+    "limit_ups": 0
+   },
+   "report": null,
+   "verdict": null
+  },
+  {
+   "rank": 14,
+   "code": "002669",
+   "name": "康达新材",
+   "price": 10.28,
+   "chg": -2.74,
+   "score": 7,
+   "first_date": "2026-10-31",
+   "is_new": false,
+   "reasons": [
+    {
+     "text": "2026-09-30 同季 3 家外资新进：大摩、瑞银、高盛",
+     "score": 4
+    },
+    {
+     "text": "现价比 大摩 的估算成本低 24.8%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "score": 2
+    },
+    {
+     "text": "定增在途，近 30 天审核无推进",
+     "score": 1
+    }
+   ],
+   "tide": {
+    "vol_ratio": 0.57,
+    "from_high": -46.2,
     "limit_ups": 0
    },
    "report": null,
@@ -469,8 +469,8 @@
    "rank": 15,
    "code": "300333",
    "name": "兆日科技",
-   "price": 8.86,
-   "chg": 1.03,
+   "price": 8.56,
+   "chg": -3.39,
    "score": 7,
    "first_date": "2026-10-31",
    "is_new": false,
@@ -480,7 +480,7 @@
      "score": 4
     },
     {
-     "text": "现价比 瑞银 的估算成本低 21.9%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 瑞银 的估算成本低 24.6%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     },
     {
@@ -489,8 +489,8 @@
     }
    ],
    "tide": {
-    "vol_ratio": 0.54,
-    "from_high": -38.9,
+    "vol_ratio": 0.5,
+    "from_high": -41.0,
     "limit_ups": 0
    },
    "report": null,
@@ -498,51 +498,20 @@
   },
   {
    "rank": 16,
-   "code": "002021",
-   "name": "中捷资源",
-   "price": 2.27,
-   "chg": -1.73,
-   "score": 7,
-   "first_date": "2026-11-12",
-   "is_new": false,
-   "reasons": [
-    {
-     "text": "2026-09-30 同季 3 家外资新进：小摩、巴克莱、高盛",
-     "score": 4
-    },
-    {
-     "text": "近 5 个交易日涨停，首板",
-     "score": 2
-    },
-    {
-     "text": "龙虎榜 2026-11-12：4家机构买入，成功率26.58%",
-     "score": 1
-    }
-   ],
-   "tide": {
-    "vol_ratio": 0.99,
-    "from_high": -41.6,
-    "limit_ups": 1
-   },
-   "report": null,
-   "verdict": null
-  },
-  {
-   "rank": 17,
    "code": "002771",
    "name": "真视通",
-   "price": 13.07,
+   "price": 14.38,
    "chg": 10.02,
    "score": 7,
    "first_date": "2026-11-18",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 2 家外资新进：大摩、巴克莱",
      "score": 3
     },
     {
-     "text": "近 5 个交易日涨停，最高 2 连板",
+     "text": "近 5 个交易日涨停，最高 3 连板",
      "score": 3
     },
     {
@@ -551,50 +520,19 @@
     }
    ],
    "tide": {
-    "vol_ratio": 1.98,
-    "from_high": -35.3,
-    "limit_ups": 2
+    "vol_ratio": 0.55,
+    "from_high": -28.8,
+    "limit_ups": 3
    },
    "report": null,
    "verdict": null
   },
   {
-   "rank": 18,
-   "code": "002623",
-   "name": "亚玛顿",
-   "price": 19.14,
-   "chg": -10.01,
-   "score": 7,
-   "first_date": "2026-11-13",
-   "is_new": false,
-   "reasons": [
-    {
-     "text": "2026-09-30 同季 2 家外资新进：大摩、巴克莱",
-     "score": 3
-    },
-    {
-     "text": "近 5 个交易日涨停，最高 4 连板",
-     "score": 3
-    },
-    {
-     "text": "龙虎榜 2026-11-13：2家机构买入，成功率55.12%",
-     "score": 1
-    }
-   ],
-   "tide": {
-    "vol_ratio": 1.42,
-    "from_high": -43.0,
-    "limit_ups": 1
-   },
-   "report": null,
-   "verdict": null
-  },
-  {
-   "rank": 19,
+   "rank": 17,
    "code": "003036",
    "name": "泰坦股份",
-   "price": 26.91,
-   "chg": 0.56,
+   "price": 26.44,
+   "chg": -1.75,
    "score": 7,
    "first_date": "2026-10-31",
    "is_new": false,
@@ -604,24 +542,24 @@
      "score": 5
     },
     {
-     "text": "现价比 美林 的估算成本低 52.3%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 美林 的估算成本低 53.2%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     }
    ],
    "tide": {
-    "vol_ratio": 0.78,
-    "from_high": -74.3,
+    "vol_ratio": 0.59,
+    "from_high": -74.8,
     "limit_ups": 0
    },
    "report": null,
    "verdict": null
   },
   {
-   "rank": 20,
+   "rank": 18,
    "code": "300534",
    "name": "陇神戎发",
-   "price": 8.66,
-   "chg": -2.81,
+   "price": 8.38,
+   "chg": -3.23,
    "score": 7,
    "first_date": "2026-10-31",
    "is_new": false,
@@ -631,24 +569,24 @@
      "score": 5
     },
     {
-     "text": "现价比 瑞银 的估算成本低 39.5%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 瑞银 的估算成本低 41.4%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     }
    ],
    "tide": {
-    "vol_ratio": 0.68,
-    "from_high": -58.7,
+    "vol_ratio": 0.48,
+    "from_high": -60.0,
     "limit_ups": 0
    },
    "report": null,
    "verdict": null
   },
   {
-   "rank": 21,
+   "rank": 19,
    "code": "600359",
    "name": "新农开发",
-   "price": 5.59,
-   "chg": -1.41,
+   "price": 5.37,
+   "chg": -3.94,
    "score": 7,
    "first_date": "2026-11-06",
    "is_new": false,
@@ -658,24 +596,24 @@
      "score": 5
     },
     {
-     "text": "现价比 高盛 的估算成本低 26.3%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 高盛 的估算成本低 29.2%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     }
    ],
    "tide": {
-    "vol_ratio": 0.5,
-    "from_high": -47.3,
+    "vol_ratio": 0.63,
+    "from_high": -49.3,
     "limit_ups": 0
    },
    "report": null,
    "verdict": null
   },
   {
-   "rank": 22,
+   "rank": 20,
    "code": "300311",
    "name": "任子行",
-   "price": 4.42,
-   "chg": -0.45,
+   "price": 4.86,
+   "chg": 9.95,
    "score": 7,
    "first_date": "2026-10-31",
    "is_new": false,
@@ -685,24 +623,24 @@
      "score": 5
     },
     {
-     "text": "现价比 瑞银 的估算成本低 26.3%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 瑞银 的估算成本低 19.0%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     }
    ],
    "tide": {
-    "vol_ratio": 0.58,
-    "from_high": -38.3,
+    "vol_ratio": 2.93,
+    "from_high": -32.1,
     "limit_ups": 0
    },
    "report": null,
    "verdict": null
   },
   {
-   "rank": 23,
+   "rank": 21,
    "code": "301005",
    "name": "超捷股份",
-   "price": 43.24,
-   "chg": -2.9,
+   "price": 42.0,
+   "chg": -2.87,
    "score": 6,
    "first_date": "2026-11-02",
    "is_new": false,
@@ -712,7 +650,7 @@
      "score": 3
     },
     {
-     "text": "现价比 瑞银 的估算成本低 46.2%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 瑞银 的估算成本低 47.8%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     },
     {
@@ -721,19 +659,19 @@
     }
    ],
    "tide": {
-    "vol_ratio": 0.77,
-    "from_high": -73.5,
+    "vol_ratio": 0.56,
+    "from_high": -74.3,
     "limit_ups": 0
    },
    "report": null,
    "verdict": null
   },
   {
-   "rank": 24,
+   "rank": 22,
    "code": "603137",
    "name": "恒尚节能",
-   "price": 14.49,
-   "chg": 0.07,
+   "price": 14.3,
+   "chg": -1.31,
    "score": 6,
    "first_date": "2026-10-31",
    "is_new": false,
@@ -743,7 +681,7 @@
      "score": 3
     },
     {
-     "text": "现价比 高盛 的估算成本低 42.8%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 高盛 的估算成本低 43.5%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     },
     {
@@ -752,19 +690,19 @@
     }
    ],
    "tide": {
-    "vol_ratio": 0.8,
-    "from_high": -59.3,
+    "vol_ratio": 1.06,
+    "from_high": -59.8,
     "limit_ups": 0
    },
    "report": null,
    "verdict": null
   },
   {
-   "rank": 25,
+   "rank": 23,
    "code": "300283",
    "name": "温州宏丰",
-   "price": 8.97,
-   "chg": 1.01,
+   "price": 8.75,
+   "chg": -2.45,
    "score": 6,
    "first_date": "2026-10-31",
    "is_new": false,
@@ -774,7 +712,7 @@
      "score": 3
     },
     {
-     "text": "现价比 小摩 的估算成本低 39.9%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 小摩 的估算成本低 41.4%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     },
     {
@@ -783,19 +721,19 @@
     }
    ],
    "tide": {
-    "vol_ratio": 0.71,
-    "from_high": -66.2,
+    "vol_ratio": 0.64,
+    "from_high": -67.0,
     "limit_ups": 0
    },
    "report": null,
    "verdict": null
   },
   {
-   "rank": 26,
+   "rank": 24,
    "code": "001216",
    "name": "华瓷股份",
-   "price": 15.16,
-   "chg": -1.43,
+   "price": 14.64,
+   "chg": -3.43,
    "score": 6,
    "first_date": "2026-11-03",
    "is_new": false,
@@ -805,7 +743,7 @@
      "score": 3
     },
     {
-     "text": "现价比 瑞银 的估算成本低 30.7%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 瑞银 的估算成本低 33.1%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     },
     {
@@ -814,38 +752,7 @@
     }
    ],
    "tide": {
-    "vol_ratio": 0.38,
-    "from_high": -48.6,
-    "limit_ups": 0
-   },
-   "report": null,
-   "verdict": null
-  },
-  {
-   "rank": 27,
-   "code": "605588",
-   "name": "冠石科技",
-   "price": 35.7,
-   "chg": -2.08,
-   "score": 6,
-   "first_date": "2026-11-09",
-   "is_new": false,
-   "reasons": [
-    {
-     "text": "2026-09-30 同季 2 家外资新进：小摩、美林",
-     "score": 3
-    },
-    {
-     "text": "现价比 大摩 的估算成本低 27.5%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
-     "score": 2
-    },
-    {
-     "text": "定增在途，近 30 天审核无推进",
-     "score": 1
-    }
-   ],
-   "tide": {
-    "vol_ratio": 1.64,
+    "vol_ratio": 0.33,
     "from_high": -50.4,
     "limit_ups": 0
    },
@@ -853,11 +760,11 @@
    "verdict": null
   },
   {
-   "rank": 28,
+   "rank": 25,
    "code": "688678",
    "name": "福立旺",
-   "price": 16.55,
-   "chg": -5.91,
+   "price": 15.77,
+   "chg": -4.71,
    "score": 6,
    "first_date": "2026-11-03",
    "is_new": false,
@@ -867,7 +774,7 @@
      "score": 3
     },
     {
-     "text": "现价比 瑞银 的估算成本低 24.9%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 瑞银 的估算成本低 28.4%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     },
     {
@@ -876,19 +783,19 @@
     }
    ],
    "tide": {
-    "vol_ratio": 0.81,
-    "from_high": -50.7,
+    "vol_ratio": 0.72,
+    "from_high": -53.1,
     "limit_ups": 0
    },
    "report": null,
    "verdict": null
   },
   {
-   "rank": 29,
+   "rank": 26,
    "code": "300706",
    "name": "阿石创",
-   "price": 43.52,
-   "chg": 6.64,
+   "price": 40.81,
+   "chg": -6.23,
    "score": 6,
    "first_date": "2026-11-02",
    "is_new": false,
@@ -898,7 +805,7 @@
      "score": 3
     },
     {
-     "text": "现价比 大摩 的估算成本低 22.9%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 大摩 的估算成本低 27.7%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     },
     {
@@ -907,8 +814,109 @@
     }
    ],
    "tide": {
-    "vol_ratio": 3.33,
-    "from_high": -53.7,
+    "vol_ratio": 2.18,
+    "from_high": -56.5,
+    "limit_ups": 0
+   },
+   "report": null,
+   "verdict": null
+  },
+  {
+   "rank": 27,
+   "code": "605588",
+   "name": "冠石科技",
+   "price": 37.33,
+   "chg": 4.57,
+   "score": 6,
+   "first_date": "2026-11-09",
+   "is_new": false,
+   "reasons": [
+    {
+     "text": "2026-09-30 同季 2 家外资新进：小摩、美林",
+     "score": 3
+    },
+    {
+     "text": "现价比 大摩 的估算成本低 24.1%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "score": 2
+    },
+    {
+     "text": "定增在途，近 30 天审核无推进",
+     "score": 1
+    }
+   ],
+   "tide": {
+    "vol_ratio": 3.7,
+    "from_high": -48.2,
+    "limit_ups": 0
+   },
+   "report": null,
+   "verdict": null
+  },
+  {
+   "rank": 28,
+   "code": "301520",
+   "name": "万邦医药",
+   "price": 48.58,
+   "chg": -4.91,
+   "score": 6,
+   "first_date": "2026-11-19",
+   "is_new": true,
+   "reasons": [
+    {
+     "text": "2026-09-30 同季 3 家外资新进：大摩、小摩、高盛",
+     "score": 4
+    },
+    {
+     "text": "现价比 高盛 的估算成本低 21.5%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "score": 2
+    },
+    {
+     "text": "地方国资新进：2026-09-30 本期新进：江苏天汇苏民投健康产业投资管理有限公司-江苏疌泉天汇苏民投健康产业基金(有限合伙（第1名 6.26%）",
+     "score": 3
+    },
+    {
+     "text": "未来12个月解禁合计约占流通股 167%，最近一次 2027-03-25",
+     "score": -3
+    }
+   ],
+   "tide": {
+    "vol_ratio": 0.49,
+    "from_high": -45.3,
+    "limit_ups": 0
+   },
+   "report": null,
+   "verdict": null
+  },
+  {
+   "rank": 29,
+   "code": "301089",
+   "name": "拓新药业",
+   "price": 18.68,
+   "chg": -3.46,
+   "score": 6,
+   "first_date": "2026-11-18",
+   "is_new": false,
+   "reasons": [
+    {
+     "text": "2026-09-30 同季 3 家外资新进：大摩、小摩、巴克莱",
+     "score": 4
+    },
+    {
+     "text": "现价比 小摩 的估算成本低 21.0%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "score": 2
+    },
+    {
+     "text": "定增在途，2026-11-10 提交注册",
+     "score": 3
+    },
+    {
+     "text": "2026-09-21 减持终止",
+     "score": -3
+    }
+   ],
+   "tide": {
+    "vol_ratio": 0.9,
+    "from_high": -48.6,
     "limit_ups": 0
    },
    "report": null,
@@ -918,8 +926,8 @@
    "rank": 30,
    "code": "600479",
    "name": "千金药业",
-   "price": 10.11,
-   "chg": -0.88,
+   "price": 10.0,
+   "chg": -1.09,
    "score": 6,
    "first_date": "2026-11-18",
    "is_new": false,
@@ -929,7 +937,7 @@
      "score": 3
     },
     {
-     "text": "现价比 高盛 的估算成本低 18.6%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "text": "现价比 高盛 的估算成本低 19.5%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
      "score": 2
     },
     {
@@ -938,8 +946,8 @@
     }
    ],
    "tide": {
-    "vol_ratio": 0.67,
-    "from_high": -32.9,
+    "vol_ratio": 0.6,
+    "from_high": -33.6,
     "limit_ups": 0
    },
    "report": null,
