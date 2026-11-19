@@ -637,6 +637,41 @@
   },
   {
    "rank": 21,
+   "code": "002579",
+   "name": "中京电子",
+   "price": 12.17,
+   "chg": 10.04,
+   "score": 6,
+   "first_date": "2026-11-19",
+   "is_new": true,
+   "reasons": [
+    {
+     "text": "现价比 瑞银 的估算成本低 24.6%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
+     "score": 2
+    },
+    {
+     "text": "定增在途，近 30 天审核无推进",
+     "score": 1
+    },
+    {
+     "text": "近 5 个交易日涨停，首板",
+     "score": 2
+    },
+    {
+     "text": "龙虎榜 2026-11-19：1家机构买入，成功率29.82%",
+     "score": 1
+    }
+   ],
+   "tide": {
+    "vol_ratio": 1.47,
+    "from_high": -48.0,
+    "limit_ups": 1
+   },
+   "report": null,
+   "verdict": null
+  },
+  {
+   "rank": 22,
    "code": "301005",
    "name": "超捷股份",
    "price": 42.0,
@@ -667,7 +702,7 @@
    "verdict": null
   },
   {
-   "rank": 22,
+   "rank": 23,
    "code": "603137",
    "name": "恒尚节能",
    "price": 14.3,
@@ -698,7 +733,7 @@
    "verdict": null
   },
   {
-   "rank": 23,
+   "rank": 24,
    "code": "300283",
    "name": "温州宏丰",
    "price": 8.75,
@@ -729,7 +764,7 @@
    "verdict": null
   },
   {
-   "rank": 24,
+   "rank": 25,
    "code": "001216",
    "name": "华瓷股份",
    "price": 14.64,
@@ -760,7 +795,7 @@
    "verdict": null
   },
   {
-   "rank": 25,
+   "rank": 26,
    "code": "688678",
    "name": "福立旺",
    "price": 15.77,
@@ -791,7 +826,7 @@
    "verdict": null
   },
   {
-   "rank": 26,
+   "rank": 27,
    "code": "300706",
    "name": "阿石创",
    "price": 40.81,
@@ -822,7 +857,7 @@
    "verdict": null
   },
   {
-   "rank": 27,
+   "rank": 28,
    "code": "605588",
    "name": "冠石科技",
    "price": 37.33,
@@ -853,14 +888,14 @@
    "verdict": null
   },
   {
-   "rank": 28,
+   "rank": 29,
    "code": "301520",
    "name": "万邦医药",
    "price": 48.58,
    "chg": -4.91,
    "score": 6,
    "first_date": "2026-11-19",
-   "is_new": true,
+   "is_new": false,
    "reasons": [
     {
      "text": "2026-09-30 同季 3 家外资新进：大摩、小摩、高盛",
@@ -888,7 +923,7 @@
    "verdict": null
   },
   {
-   "rank": 29,
+   "rank": 30,
    "code": "301089",
    "name": "拓新药业",
    "price": 18.68,
@@ -917,37 +952,6 @@
    "tide": {
     "vol_ratio": 0.9,
     "from_high": -48.6,
-    "limit_ups": 0
-   },
-   "report": null,
-   "verdict": null
-  },
-  {
-   "rank": 30,
-   "code": "600479",
-   "name": "千金药业",
-   "price": 10.0,
-   "chg": -1.09,
-   "score": 6,
-   "first_date": "2026-11-18",
-   "is_new": false,
-   "reasons": [
-    {
-     "text": "2026-09-30 同季 2 家外资新进：瑞银、高盛",
-     "score": 3
-    },
-    {
-     "text": "现价比 高盛 的估算成本低 19.5%（依据 2026-09-30 名册，估算值，该机构此后是否仍持有未知）",
-     "score": 2
-    },
-    {
-     "text": "重组在途，近 30 天审核无推进",
-     "score": 1
-    }
-   ],
-   "tide": {
-    "vol_ratio": 0.6,
-    "from_high": -33.6,
     "limit_ups": 0
    },
    "report": null,
