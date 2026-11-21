@@ -248,12 +248,7 @@ var BANDS = {
   '高出 10—30%': function (r) { return r.dev >= 10 && r.dev < 30; },
   '高出 30% 以上': function (r) { return r.dev >= 30; }
 };
-function ppv(x, k, miss) { return x.pp && x.pp[k] != null ? x.pp[k] : miss; }
-function ppFirst(x) { var f = x.pp ? x.pp.ups.filter(function (u) { return !u.brk; }) : []; return f.length ? f[0].n : 1e9; }
 var SORTS = {
-  '公布后涨幅': function (a, b) { return ppv(b, 'now', -1e9) - ppv(a, 'now', -1e9); },
-  '最高涨过': function (a, b) { return ppv(b, 'maxup', -1e9) - ppv(a, 'maxup', -1e9); },
-  '涨停最快': function (a, b) { return ppFirst(a) - ppFirst(b) || ppv(b, 'now', -1e9) - ppv(a, 'now', -1e9); },
   '公布日期': function (a, b) { return (b.notice || b.q).localeCompare(a.notice || a.q) || b.holders.length - a.holders.length; },
   '机构家数': function (a, b) { return b.holders.length - a.holders.length || b.ratio - a.ratio; },
   '偏离从低到高': function (a, b) { return a.dev - b.dev; },
@@ -268,7 +263,7 @@ function snapDate(x, newest) {
 var BAND_TXT = { '全部': '全部区间', '低于成本 20% 以上': '低 >20%', '低于 10—20%': '低 10~20%', '相差 10% 以内': '±10% 内',
   '高出 10—30%': '高 10~30%', '高出 30% 以上': '高 >30%' };
 var BAND_LOW = { '低于成本 20% 以上': 1, '低于 10—20%': 1 };
-var SORT_TXT = { '公布后涨幅': '排序：公布后涨跌（高→低）', '最高涨过': '排序：公布后最高涨过（高→低）', '涨停最快': '排序：第一个涨停（快→慢）', '公布日期': '排序：公布日期（新→旧）', '机构家数': '排序：机构家数（多→少）', '偏离从低到高': '排序：偏离成本（低→高）', '占流通从高到低': '排序：占流通股（高→低）' };
+var SORT_TXT = { '公布日期': '排序：公布日期（新→旧）', '机构家数': '排序：机构家数（多→少）', '偏离从低到高': '排序：偏离成本（低→高）', '占流通从高到低': '排序：占流通股（高→低）' };
 var POOL = { histOpen: false, q: '', holder: '全部', band: '全部', sort: '', limit: 50 };   // sort 空＝快照按公布日期、季报按机构家数
 // 一组单选按钮：kind 是 'seg-btn'（分段条）或 'cell-btn'（格子）；item = {v, label, cnt, dot, cls}
 function btnSet(id, kind, items, cur, pick, redraw) {
@@ -318,17 +313,11 @@ function sortSelect(id, keys, labels, cur, pick, redraw) {
     openSheet('sort-sheet', 'sort');
   };
 }
-// 季报后表现：票名旁的涨停/炸板标、下面一行公布后涨跌
+// 季报后表现：票名旁的涨停/炸板小标（详细在台账“外资名单公布后”与单只票页）
 function ppTag(x) {
   if (!x.pp) return '';
   var f = x.pp.ups.filter(function (u) { return !u.brk; }).length, b = x.pp.ups.length - f;
   return f ? ' <span class="fact-tag t-rise">涨停×' + f + '</span>' : b ? ' <span class="fact-tag">炸板×' + b + '</span>' : '';
-}
-function ppLine(x) {
-  if (!x.pp) return '';
-  var p = x.pp, f = p.ups.filter(function (u) { return !u.brk; });
-  return '<div class="pp-line">公布后 <span class="' + tone(p.now) + '">' + pct(p.now) + '</span>（最高 ' + pct(p.maxup) + '）' +
-    (p.idx_now != null ? ' · 沪深300 ' + pct(p.idx_now) : '') + (f.length ? ' · 首个涨停在第 ' + f[0].n + ' 天' : '') + '</div>';
 }
 function poolRedraw() { POOL.limit = 50; drawPool(); }
 function drawPool() {
@@ -418,23 +407,14 @@ function drawPool() {
     }).sort(SORTS[sortKey]);
     var rows = list.slice(0, POOL.limit);
     var newest = POOL.q === 'snap' ? list.reduce(function (m, x) { return x.notice > m ? x.notice : m; }, '') : '';
-    var meta = '符合条件：<strong class="num">' + list.length + '</strong> 只票';
-    var withPP = list.filter(function (x) { return x.pp; });
-    if (withPP.length && POOL.holder === '全部') {        // 小结只给全部通道；按机构的成绩只放本机报告
-      var nUp = withPP.filter(function (x) { return x.pp.ups.some(function (u) { return !u.brk; }); }).length;
-      var nBrk = withPP.filter(function (x) { return x.pp.ups.length && !x.pp.ups.some(function (u) { return !u.brk; }); }).length;
-      var nWin = withPP.filter(function (x) { return x.pp.idx_now != null && x.pp.now > x.pp.idx_now; }).length;
-      meta += '<div class="pp-sum">外资新进或加仓 ' + withPP.length + ' 只，公布后：封过涨停 <strong class="num">' + nUp + '</strong> 只，只炸板 ' + nBrk +
-        ' 只，跑赢沪深300 <strong class="num">' + nWin + '</strong> 只（行情 ' + esc(rr[1].updated) + '）</div>';
-    }
-    $('pool-meta').innerHTML = meta;
+    $('pool-meta').innerHTML = '符合条件：<strong class="num">' + list.length + '</strong> 只票';
     var chgTag = function (x) {
       var n = x.chg.filter(function (c) { return c === '新进'; }).length;
       return n ? (n === x.holders.length ? '新进' : n + ' 家新进') : (x.chg[0] || '');
     };
     $('pool-tbody').innerHTML = rows.map(function (x) {
       return '<tr onclick="location.hash=\'#stock/' + x.code + '\'" style="cursor:pointer;"><td><strong class="serif">' + esc(x.name) +
-        '</strong> <span class="num t-muted">' + x.code + '</span>' + snapDate(x, newest) + ppTag(x) + ppLine(x) + '</td><td>' + esc(x.holders.join(' / ')) +
+        '</strong> <span class="num t-muted">' + x.code + '</span>' + snapDate(x, newest) + ppTag(x) + '</td><td>' + esc(x.holders.join(' / ')) +
         (x.holders.length > 1 ? '（' + x.holders.length + ' 家）' : '') + '</td><td><span class="fact-tag">' + esc(chgTag(x)) + '</span></td>' +
         '<td class="num text-right">' + x.price.toFixed(2) + '</td><td class="num text-right">' + x.cost.toFixed(2) + '</td>' +
         '<td class="num text-right ' + tone(x.dev) + '">' + pct(x.dev) + '</td><td class="num text-right">' + x.ratio.toFixed(2) + '%</td></tr>';
@@ -442,7 +422,7 @@ function drawPool() {
     $('pool-cards').innerHTML = rows.map(function (x) {
       return '<div class="card" onclick="location.hash=\'#stock/' + x.code + '\'">' +
         '<div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">' +
-        '<div><strong class="serif" style="font-size:1.05rem;">' + esc(x.name) + '</strong> <span class="num t-muted" style="font-size:0.82rem;">' + x.code + '</span>' + snapDate(x, newest) + ppTag(x) + ppLine(x) + '</div>' +
+        '<div><strong class="serif" style="font-size:1.05rem;">' + esc(x.name) + '</strong> <span class="num t-muted" style="font-size:0.82rem;">' + x.code + '</span>' + snapDate(x, newest) + ppTag(x) + '</div>' +
         '<div class="num"><strong>' + x.price.toFixed(2) + '</strong></div></div>' +
         '<div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;"><span class="fact-tag" style="color:var(--accent);">' + esc(chgTag(x)) + '</span>' +
         '<span class="fact-tag">' + esc(x.holders.join(' / ')) + '</span></div>' +
@@ -676,12 +656,123 @@ function drawTheme(name) {
   });
 }
 
-// ---------- 研究台账 ----------
+// ---------- 台账：上方切换“外资名单公布后”（涨停榜）与“我们的判断”（研究台账） ----------
+var LT = { tab: 'pp' };
+var LT_SUB = { pp: '外资新进或加仓的名单公布后，哪些票涨停或炸板、隔了几天、为什么',
+  judge: '站主判定“值得研究”的票记五件事，到期对账；看错的保留并标注，不删' };
+function drawLedger() {
+  btnSet('ledger-tab', 'cell-btn', [{ v: 'pp', label: '外资名单公布后' }, { v: 'judge', label: '我们的判断' }], LT.tab, function (v) { LT.tab = v; }, drawLedger);
+  $('pp-wrap').style.display = LT.tab === 'pp' ? '' : 'none';
+  $('judge-wrap').style.display = LT.tab === 'judge' ? '' : 'none';
+  $('ledger-sub').textContent = LT_SUB[LT.tab];
+  if (LT.tab === 'pp') drawPP(); else drawJudge();
+}
+
+// 涨停榜：三季报与季后快照里六家外资新进或加仓、公布后封过涨停或炸过板的票
+var PP_H6 = ['巴克莱', '高盛', '大摩', '小摩', '瑞银', '美林'];
+var PP_QN = { '03-31': '一季报', '06-30': '半年报', '09-30': '三季报', '12-31': '年报' };
+var PPS = { src: '全部', type: '全部', holder: '全部', why: '全部', sort: '最新', limit: 30 };
+function ppSealed(i) { return i.ups.filter(function (u) { return !u.brk; }); }
+function ppWhyKind(u) { return !u ? '' : /^公告/.test(u.why) ? '公告' : /^板块/.test(u.why) ? '板块' : '待查'; }
+function ppLast(i) { return i.ups.length ? i.ups[i.ups.length - 1].d : ''; }
+var PP_SORT = {
+  '最新': function (a, b) { return ppLast(b).localeCompare(ppLast(a)) || a.ups[0].n - b.ups[0].n; },
+  '最快': function (a, b) { return a.ups[0].n - b.ups[0].n || ppLast(b).localeCompare(ppLast(a)); }
+};
+function ppRedraw() { PPS.limit = 30; drawPP(); }
+function drawPP() {
+  load('post_perf.json').then(function (P) {
+    var ok = !!(P && P.items);
+    ready('pp', ok); if (!ok) { $('ledger-upd').textContent = '建设中'; return; }
+    $('ledger-upd').textContent = '行情 ' + P.updated;
+    var qn = PP_QN[P.q.slice(5)] || '季报', all = P.items;
+    var hits = all.filter(function (i) { return i.ups.length; });
+    var SRC = { '全部': '' }; SRC[qn] = '季报'; SRC['季后快照'] = '快照';
+    if (!(PPS.src in SRC)) PPS.src = '全部';
+    var pass = function (i, skip) {               // skip：算某一组按钮的条数时不套它自己
+      var sealed = ppSealed(i).length > 0;
+      return (skip === 'src' || !SRC[PPS.src] || i.kind === SRC[PPS.src]) &&
+        (skip === 'type' || PPS.type === '全部' || (PPS.type === '封过涨停') === sealed) &&
+        (skip === 'holder' || PPS.holder === '全部' || i.holders.some(function (h) { return h.h === PPS.holder; })) &&
+        (skip === 'why' || PPS.why === '全部' || ppWhyKind(i.ups[0]) === PPS.why);
+    };
+    var cnt = function (dim, test) { return hits.filter(function (i) { return pass(i, dim) && test(i); }).length; };
+    btnSet('pp-src', 'cell-btn', Object.keys(SRC).map(function (k) { return { v: k, label: k, cnt: cnt('src', function (i) { return !SRC[k] || i.kind === SRC[k]; }) }; }),
+      PPS.src, function (v) { PPS.src = v; }, ppRedraw);
+    btnSet('pp-type', 'cell-btn', ['全部', '封过涨停', '只炸板'].map(function (k) {
+      return { v: k, label: k, cnt: cnt('type', function (i) { return k === '全部' || (k === '封过涨停') === (ppSealed(i).length > 0); }) };
+    }), PPS.type, function (v) { PPS.type = v; }, ppRedraw);
+    btnSet('pp-holder', 'cell-btn', ['全部'].concat(PP_H6).map(function (k) {
+      return { v: k, label: k, cnt: cnt('holder', function (i) { return k === '全部' || i.holders.some(function (h) { return h.h === k; }); }) };
+    }), PPS.holder, function (v) { PPS.holder = v; }, ppRedraw);
+    btnSet('pp-why', 'cell-btn', ['全部', '公告', '板块', '待查'].map(function (k) {
+      return { v: k, label: k, cnt: cnt('why', function (i) { return k === '全部' || ppWhyKind(i.ups[0]) === k; }) };
+    }), PPS.why, function (v) { PPS.why = v; }, ppRedraw);
+    var list = hits.filter(function (i) { return pass(i); }).sort(PP_SORT[PPS.sort]);
+    $('pp-meta').innerHTML = '符合条件：<strong class="num">' + list.length + '</strong> 只';
+    var sb = $('pp-sort');
+    sb.textContent = '排序：' + (PPS.sort === '最新' ? '最新涨停在前' : '涨得最快在前') + ' ⇄';
+    sb.onclick = function () { PPS.sort = PPS.sort === '最新' ? '最快' : '最新'; ppRedraw(); };
+
+    // 小结：本季多少只、涨停过多少只；首个涨停隔多久；原因分布
+    var up = all.filter(function (i) { return ppSealed(i).length; }), brk = hits.length - up.length;
+    var bins = [['公布当天', 1, 1], ['1—5 天', 2, 6], ['6—20 天', 7, 21], ['20 天以上', 22, 1e9]].map(function (b) {
+      return [b[0], up.filter(function (i) { var n = ppSealed(i)[0].n; return n >= b[1] && n <= b[2]; }).length];
+    });
+    var wk = {}; hits.forEach(function (i) { var k = ppWhyKind(i.ups[0]); wk[k] = (wk[k] || 0) + 1; });
+    var share = all.length ? Math.round(up.length / all.length * 100) : 0;
+    $('pp-summary').innerHTML = '<p class="pp-sum-line">' + esc(P.q.slice(0, 4)) + ' ' + qn + '及之后的季后快照：六家外资新进或加仓 <strong class="num">' + all.length +
+      '</strong> 只，名单公布后封过涨停 <strong class="num t-rise">' + up.length + '</strong> 只（' + share + '%），只炸板 <strong class="num">' + brk + '</strong> 只。</p>' +
+      '<div class="pp-bins">' + bins.map(function (b) { return '<div><div class="num pp-bin-n">' + b[1] + '</div><div class="t-muted">' + b[0] + '</div></div>'; }).join('') + '</div>' +
+      '<p class="pp-sum-foot t-muted">上面四格：从名单公布到第一个涨停隔了多久。第一个涨停或炸板的原因：公告 ' + (wk['公告'] || 0) + ' 只、板块一起涨 ' + (wk['板块'] || 0) + ' 只、原因待查 ' + (wk['待查'] || 0) + ' 只。</p>';
+
+    // 每只票一张卡
+    var f = function (k, v, n) { return '<div class="lf lf-' + n + '"><div class="field-label">' + k + '</div><div>' + v + '</div></div>'; };
+    var rows = list.slice(0, PPS.limit);
+    $('pp-list').innerHTML = rows.map(function (i) {
+      var s = ppSealed(i), b = i.ups.length - s.length, u0 = s[0] || i.ups[0];
+      var maxl = Math.max.apply(null, i.ups.map(function (u) { return u.lbc || 1; }));
+      var hs = i.holders.map(function (h) { return h.h + (h.chg === '新进' ? '新进' : '加仓'); }).join('、');
+      var tags = (s.length ? '<span class="fact-tag t-rise">涨停×' + s.length + '</span>' : '') + (b ? '<span class="fact-tag">炸板×' + b + '</span>' : '') +
+        (maxl > 1 ? '<span class="fact-tag">最多 ' + maxl + ' 连板</span>' : '') +
+        '<span class="fact-tag">' + (i.kind === '快照' ? '季后快照 ' + esc(i.q.slice(5)) : qn) + '</span>';
+      return '<article class="card ledger-card pp-card' + (s.length ? ' pp-up' : ' pp-brk') + '"><div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">' +
+        '<div>' + stockLink(i.code, i.name) + '</div><div style="display:flex; gap:6px; flex-wrap:wrap;">' + tags + '</div></div>' +
+        '<div class="ledger-grid">' +
+        f('名单公布', '<span class="num">' + esc(i.notice.slice(5)) + '</span> · ' + esc(hs), 1) +
+        f('涨停前先跌', i.dip != null && i.dip < 0 ? '<span class="num t-fall">' + pct(i.dip) + '</span>' : '<span class="t-muted">没再跌</span>', 3) +
+        f(s.length ? '第一个涨停' : '第一次炸板', '<span class="num">' + esc(u0.d.slice(5)) + '</span>，公布后第 <strong class="num">' + u0.n + '</strong> 天' +
+          (s.length && b ? '；另炸板 ' + b + ' 次' : ''), 2) +
+        f('原因', esc(u0.why), 4) +
+        f('公布后至今', '最高 <span class="num t-rise">' + pct(i.maxup) + '</span>，现在 <span class="num ' + tone(i.now) + '">' + pct(i.now) + '</span>' +
+          (i.idx_now != null ? '，同期沪深300 <span class="num">' + pct(i.idx_now) + '</span>' : ''), 5) +
+        '</div></article>';
+    }).join('') || '<div class="card"><p class="t-muted">没有符合条件的票。</p></div>';
+    more('pp-more', list.length - rows.length, function () { PPS.limit += 30; drawPP(); });
+
+    // 各家外资的成绩（全部新进或加仓的票，不只是涨停的）
+    var hrow = PP_H6.map(function (h) {
+      var mine = all.filter(function (i) { return i.holders.some(function (x) { return x.h === h; }); });
+      var hit = mine.filter(function (i) { return ppSealed(i).length; });
+      var avg = function (arr, fn) { return arr.length ? arr.reduce(function (a, i) { return a + fn(i); }, 0) / arr.length : null; };
+      var fd = avg(hit, function (i) { return ppSealed(i)[0].n; }), mu = avg(mine, function (i) { return i.maxup; });
+      return '<tr><td><strong>' + h + '</strong></td><td class="num text-right">' + mine.length + '</td><td class="num text-right">' + hit.length +
+        (mine.length ? '（' + Math.round(hit.length / mine.length * 100) + '%）' : '') + '</td><td class="num text-right">' + (fd == null ? '—' : '第 ' + fd.toFixed(0) + ' 天') +
+        '</td><td class="num text-right ' + (mu == null ? '' : tone(mu)) + '">' + (mu == null ? '—' : pct(mu)) + '</td></tr>';
+    });
+    $('pp-hstat-tbody').innerHTML = hrow.join('');
+    $('pp-hstat-meta').textContent = '一只票几家同进，各家都算一次';
+    $('pp-rules').innerHTML = esc(P.rule) + '。一只票的季报名单和季后快照分开算。“首板平均”只算封过涨停的票；“平均最高”算该机构全部新进或加仓的票。' +
+      '原因按顺序认：连板沿用上一个板的原因 → 涨停前 4 天内的关键公告 → 当天同行业 3 只以上一起涨停 → 都不是就写“原因待查”。只是事实统计，不是买卖建议。';
+  });
+}
+
+// ---------- 我们的判断（研究台账） ----------
 var LG = { res: '全部', sort: '进入日期' };
 var LG_SORT = { '进入日期': function (a, b) { return b.found.localeCompare(a.found); }, '到期日': function (a, b) { return a.due.localeCompare(b.due); } };
 var LG_SORT_TXT = { '进入日期': '排序：进入日期（新→旧）', '到期日': '排序：到期日（近→远）' };
 var LG_CLS = { '看对了': ' verdict-right', '看错了': ' verdict-wrong' };
-function drawLedger() {
+function drawJudge() {
   load('ledger.json').then(function (L) {
     var ok = !!(L && L.v === 2);               // 老站拷来的旧格式（里面有站主持仓）不显示
     ready('ledger', ok); if (!ok) { $('ledger-upd').textContent = '建设中'; return; }
@@ -689,8 +780,8 @@ function drawLedger() {
     var E = L.entries;
     btnSet('ledger-res', 'cell-btn', ['全部', '未到期', '看对了', '看错了'].map(function (k) {
       return { v: k, label: k, cnt: E.filter(function (e) { return k === '全部' || e.result === k; }).length };
-    }), LG.res, function (v) { LG.res = v; }, drawLedger);
-    sortSelect('ledger-sort', Object.keys(LG_SORT), LG_SORT_TXT, LG.sort, function (v) { LG.sort = v; }, drawLedger);
+    }), LG.res, function (v) { LG.res = v; }, drawJudge);
+    sortSelect('ledger-sort', Object.keys(LG_SORT), LG_SORT_TXT, LG.sort, function (v) { LG.sort = v; }, drawJudge);
     var list = E.filter(function (e) { return LG.res === '全部' || e.result === LG.res; }).sort(LG_SORT[LG.sort]);
     $('ledger-meta').innerHTML = '符合条件：<strong class="num">' + list.length + '</strong> 条';
     var f = function (k, v, n) { return '<div class="lf lf-' + n + '"><div class="field-label">' + k + '</div><div>' + v + '</div></div>'; };

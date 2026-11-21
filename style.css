@@ -1489,6 +1489,19 @@ details.seat-card summary::-webkit-details-marker{display:none}
 
 /* 季报后表现（2026-11-21） */
 .pp-line { font-size: .78rem; color: var(--ink-2); margin-top: 3px; font-weight: 400; }
-.pp-sum { font-size: .82rem; color: var(--ink-2); margin-top: 4px; }
 .pp-item + .pp-item { border-top: 1px solid var(--line, rgba(0,0,0,.08)); margin-top: 10px; padding-top: 10px; }
 .pp-ups { margin: 6px 0 0; padding-left: 18px; font-size: .82rem; line-height: 1.6; }
+
+/* 台账：外资名单公布后涨停榜（2026-11-22） */
+.ledger-tabs { margin: 4px 0 14px; max-width: 420px; }
+.pp-summary { margin-bottom: 14px; }
+.pp-sum-line { font-size: .9rem; line-height: 1.7; }
+.pp-bins { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 12px 0 8px; background: var(--panel-subtle); border-radius: 8px; padding: 10px; text-align: center; font-size: .76rem; }
+.pp-bin-n { font-size: 1.25rem; font-weight: 700; color: var(--ink); }
+.pp-sum-foot { font-size: .78rem; line-height: 1.6; }
+.p-ledger .ledger-card.pp-up { border-left-color: var(--rise); }
+.p-ledger .ledger-card.pp-brk { border-left-color: var(--amber); }
+.pp-sort-btn { white-space: nowrap; }
+.pp-hstat-card { padding: 0; overflow: hidden; }
+.pp-hstat-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.pp-hstat { min-width: 420px; }

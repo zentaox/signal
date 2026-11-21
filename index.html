@@ -14,7 +14,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Signal">
   <title>Signal · A股研究线索</title>
-  <link rel="stylesheet" href="style.css?v=20261121b">
+  <link rel="stylesheet" href="style.css?v=20261122a">
 </head>
 <body data-state="normal">
 
@@ -490,11 +490,58 @@
       <div class="normal-content">
         <div class="sec-head">
           <div>
-            <h1 class="sec-title" style="font-size:1.35rem;">研究台账</h1>
-            <p style="font-size:0.83rem; color:var(--ink-2); margin-top:2px;">站主判定“值得研究”的票记五件事，到期对账；看错的保留并标注，不删</p>
+            <h1 class="sec-title" style="font-size:1.35rem;">台账</h1>
+            <p style="font-size:0.83rem; color:var(--ink-2); margin-top:2px;" id="ledger-sub"></p>
           </div>
           <span class="sec-meta" id="ledger-upd">读取中…</span>
         </div>
+        <div class="cells seg-m ledger-tabs" id="ledger-tab" style="--n:2" role="radiogroup" aria-label="台账分类"></div>
+
+        <!-- 外资名单公布后涨停榜（新站第 49 项）：三季报与季后快照里六家外资新进或加仓、公布后封过涨停或炸过板的票 -->
+        <div id="pp-wrap">
+        <div class="card build-card" id="pp-empty" style="display:none;"><p>数据还在准备，稍后再来。</p></div>
+        <div id="pp-body" style="display:none;">
+        <div class="card pp-summary" id="pp-summary"></div>
+        <div class="split">
+        <div class="split-side">
+        <div class="filter-card" role="group" aria-label="涨停榜筛选">
+          <div class="filter-group">
+            <div class="group-head"><span class="group-label">来源</span></div>
+            <div class="cells seg-m" id="pp-src" style="--n:3" role="radiogroup" aria-label="来源"></div>
+          </div>
+          <div class="filter-group">
+            <div class="group-head"><span class="group-label">涨停还是炸板</span></div>
+            <div class="cells seg-m" id="pp-type" style="--n:3" role="radiogroup" aria-label="涨停还是炸板"></div>
+          </div>
+          <div class="filter-group">
+            <div class="group-head"><span class="group-label">外资通道</span></div>
+            <div class="cells" id="pp-holder" role="radiogroup" aria-label="外资通道"></div>
+          </div>
+          <div class="filter-group">
+            <div class="group-head"><span class="group-label">第一个涨停的原因</span></div>
+            <div class="cells seg-m" id="pp-why" style="--n:4" role="radiogroup" aria-label="原因"></div>
+          </div>
+        </div>
+        </div>
+        <div class="split-main">
+        <div class="result-sort-bar">
+          <span id="pp-meta"></span>
+          <button type="button" class="chip pp-sort-btn" id="pp-sort"></button>
+        </div>
+        <div id="pp-list"></div>
+        <button class="chip more-btn" id="pp-more" style="display:none"></button>
+        <div class="sec-head" style="margin-top:22px;"><h2 class="sec-title">各家外资的成绩</h2><span class="sec-meta" id="pp-hstat-meta"></span></div>
+        <div class="card pp-hstat-card"><div class="pp-hstat-wrap"><table class="data-table pp-hstat">
+          <thead><tr><th>外资</th><th class="text-right">新进/加仓</th><th class="text-right">涨停过</th><th class="text-right">首板平均</th><th class="text-right">平均最高</th></tr></thead>
+          <tbody id="pp-hstat-tbody"></tbody></table></div></div>
+        <details class="rules-box"><summary>这个榜怎么算</summary><div id="pp-rules"></div></details>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <!-- 我们的判断：原研究台账 -->
+        <div id="judge-wrap" style="display:none;">
         <div class="card build-card" id="ledger-empty" style="display:none;"><p>建设中。这里以后会放：</p><ul><li>站主判定「值得研究」的票自动进入</li><li>每条记：进入日期、触发事实、在等哪个节点、什么情况算看错、到期日</li><li>到期对账：看对了、看错了、还没到时候。看错的保留并标注，不删</li></ul></div>
         <div class="split" id="ledger-body" style="display:none;">
         <div class="split-side">
@@ -515,6 +562,7 @@
         </div>
         <div id="ledger-list"></div>
         <details class="rules-box"><summary>台账怎么记</summary><div>站主在 TG 发“值得”后自动建一条：进入日期和当天价格、触发事实（取上榜理由）、在等哪个节点、什么情况算看错、到期日（默认 90 天）。到期后对账，结果只有三种：看对了、看错了、还没到时候。看错的永久保留。</div></details>
+        </div>
         </div>
         </div>
       </div>
@@ -626,7 +674,7 @@
   <!-- 底部轻量 Toast 提示 -->
   <div id="pixel-toast" class="pixel-toast" role="status" aria-live="polite"></div>
 
-  <script src="app.js?v=20261121b"></script>
+  <script src="app.js?v=20261122a"></script>
   <!-- 访问统计（11-04 用户批准）：Cloudflare Web Analytics，只数人次，不放 cookie、不认人 -->
   <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "39a53ce8271447cdbaf4d97a99e20e66"}'></script>
 </body>
