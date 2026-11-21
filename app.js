@@ -249,16 +249,22 @@ var BANDS = {
   '高出 30% 以上': function (r) { return r.dev >= 30; }
 };
 var SORTS = {
+  '公布日期': function (a, b) { return (b.notice || b.q).localeCompare(a.notice || a.q) || b.holders.length - a.holders.length; },
   '机构家数': function (a, b) { return b.holders.length - a.holders.length || b.ratio - a.ratio; },
   '偏离从低到高': function (a, b) { return a.dev - b.dev; },
   '占流通从高到低': function (a, b) { return b.ratio - a.ratio; }
 };
-function snapDate(x) { return x.kind === '快照' ? ' <span class="fact-tag">快照 ' + x.q.slice(5) + '</span>' : ''; }
+// 快照标：名册日＋公布日；最近一个公布日的标“新”，每天打开一眼看出增量
+function snapDate(x, newest) {
+  if (x.kind !== '快照') return '';
+  return ' <span class="fact-tag">快照 ' + x.q.slice(5) + (x.notice ? ' · ' + x.notice.slice(5) + ' 公布' : '') + '</span>' +
+    (newest && x.notice === newest ? ' <span class="fact-tag" style="color:var(--accent);">新</span>' : '');
+}
 var BAND_TXT = { '全部': '全部区间', '低于成本 20% 以上': '低 >20%', '低于 10—20%': '低 10~20%', '相差 10% 以内': '±10% 内',
   '高出 10—30%': '高 10~30%', '高出 30% 以上': '高 >30%' };
 var BAND_LOW = { '低于成本 20% 以上': 1, '低于 10—20%': 1 };
-var SORT_TXT = { '机构家数': '排序：机构家数（多→少）', '偏离从低到高': '排序：偏离成本（低→高）', '占流通从高到低': '排序：占流通股（高→低）' };
-var POOL = { histOpen: false, q: '', holder: '全部', band: '全部', sort: '机构家数', limit: 50 };
+var SORT_TXT = { '公布日期': '排序：公布日期（新→旧）', '机构家数': '排序：机构家数（多→少）', '偏离从低到高': '排序：偏离成本（低→高）', '占流通从高到低': '排序：占流通股（高→低）' };
+var POOL = { histOpen: false, q: '', holder: '全部', band: '全部', sort: '', limit: 50 };   // sort 空＝快照按公布日期、季报按机构家数
 // 一组单选按钮：kind 是 'seg-btn'（分段条）或 'cell-btn'（格子）；item = {v, label, cnt, dot, cls}
 function btnSet(id, kind, items, cur, pick, redraw) {
   $(id).innerHTML = items.map(function (x) {
@@ -362,7 +368,8 @@ function drawPool() {
       POOL.holder, function (v) { POOL.holder = v; }, poolRedraw);
     btnSet('pool-band', 'cell-btn', Object.keys(BANDS).map(function (k) { return { v: k, label: BAND_TXT[k], cls: BAND_LOW[k] ? 'focus-low' : '' }; }),
       POOL.band, function (v) { POOL.band = v; }, poolRedraw);
-    sortSelect('pool-sort', Object.keys(SORTS), SORT_TXT, POOL.sort, function (v) { POOL.sort = v; }, poolRedraw);
+    var sortKey = POOL.sort || (POOL.q === 'snap' ? '公布日期' : '机构家数');
+    sortSelect('pool-sort', Object.keys(SORTS), SORT_TXT, sortKey, function (v) { POOL.sort = v; }, poolRedraw);
     var chip = function (g, on, html) { return '<button type="button" class="fchip' + (on ? ' on' : '') + '" data-g="' + g + '">' + html + DOWN + '</button>'; };
     var direct = function (v, html) { return '<button type="button" class="fchip fdirect' + (POOL.q === v ? ' on' : '') + '" data-q="' + v + '">' + html + '</button>'; };
     // 手机：季后快照、最新一期直接点；往期收进最后的“更多”
@@ -382,13 +389,15 @@ function drawPool() {
     var g = {};
     R.forEach(function (r) {
       if (!inView(r)) return;
-      var x = g[r.code] || (g[r.code] = { code: r.code, name: r.name, price: r.price, cost: r.cost, dev: r.dev, kind: r.kind, q: r.q, holders: [], chg: [], ratio: 0, susp: r.susp });
+      var x = g[r.code] || (g[r.code] = { code: r.code, name: r.name, price: r.price, cost: r.cost, dev: r.dev, kind: r.kind, q: r.q, notice: r.notice, holders: [], chg: [], ratio: 0, susp: r.susp });
+      if (r.notice > (x.notice || '')) x.notice = r.notice;
       x.holders.push(r.holder); x.chg.push(r.chg); x.ratio += r.ratio || 0;
     });
     var list = Object.keys(g).map(function (k) { return g[k]; }).filter(function (x) {
       return (POOL.holder === '全部' || x.holders.indexOf(POOL.holder) >= 0) && BANDS[POOL.band](x);
-    }).sort(SORTS[POOL.sort]);
+    }).sort(SORTS[sortKey]);
     var rows = list.slice(0, POOL.limit);
+    var newest = POOL.q === 'snap' ? list.reduce(function (m, x) { return x.notice > m ? x.notice : m; }, '') : '';
     $('pool-meta').innerHTML = '符合条件：<strong class="num">' + list.length + '</strong> 只票';
     var chgTag = function (x) {
       var n = x.chg.filter(function (c) { return c === '新进'; }).length;
@@ -396,7 +405,7 @@ function drawPool() {
     };
     $('pool-tbody').innerHTML = rows.map(function (x) {
       return '<tr onclick="location.hash=\'#stock/' + x.code + '\'" style="cursor:pointer;"><td><strong class="serif">' + esc(x.name) +
-        '</strong> <span class="num t-muted">' + x.code + '</span>' + snapDate(x) + '</td><td>' + esc(x.holders.join(' / ')) +
+        '</strong> <span class="num t-muted">' + x.code + '</span>' + snapDate(x, newest) + '</td><td>' + esc(x.holders.join(' / ')) +
         (x.holders.length > 1 ? '（' + x.holders.length + ' 家）' : '') + '</td><td><span class="fact-tag">' + esc(chgTag(x)) + '</span></td>' +
         '<td class="num text-right">' + x.price.toFixed(2) + '</td><td class="num text-right">' + x.cost.toFixed(2) + '</td>' +
         '<td class="num text-right ' + tone(x.dev) + '">' + pct(x.dev) + '</td><td class="num text-right">' + x.ratio.toFixed(2) + '%</td></tr>';
@@ -404,7 +413,7 @@ function drawPool() {
     $('pool-cards').innerHTML = rows.map(function (x) {
       return '<div class="card" onclick="location.hash=\'#stock/' + x.code + '\'">' +
         '<div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">' +
-        '<div><strong class="serif" style="font-size:1.05rem;">' + esc(x.name) + '</strong> <span class="num t-muted" style="font-size:0.82rem;">' + x.code + '</span>' + snapDate(x) + '</div>' +
+        '<div><strong class="serif" style="font-size:1.05rem;">' + esc(x.name) + '</strong> <span class="num t-muted" style="font-size:0.82rem;">' + x.code + '</span>' + snapDate(x, newest) + '</div>' +
         '<div class="num"><strong>' + x.price.toFixed(2) + '</strong></div></div>' +
         '<div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;"><span class="fact-tag" style="color:var(--accent);">' + esc(chgTag(x)) + '</span>' +
         '<span class="fact-tag">' + esc(x.holders.join(' / ')) + '</span></div>' +
