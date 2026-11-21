@@ -1486,3 +1486,9 @@ details.seat-card summary::-webkit-details-marker{display:none}
 
 #refresh-btn.spin svg { animation: refresh-spin .8s linear infinite; }
 @keyframes refresh-spin { to { transform: rotate(360deg); } }
+
+/* 季报后表现（2026-11-21） */
+.pp-line { font-size: .78rem; color: var(--ink-2); margin-top: 3px; font-weight: 400; }
+.pp-sum { font-size: .82rem; color: var(--ink-2); margin-top: 4px; }
+.pp-item + .pp-item { border-top: 1px solid var(--line, rgba(0,0,0,.08)); margin-top: 10px; padding-top: 10px; }
+.pp-ups { margin: 6px 0 0; padding-left: 18px; font-size: .82rem; line-height: 1.6; }
